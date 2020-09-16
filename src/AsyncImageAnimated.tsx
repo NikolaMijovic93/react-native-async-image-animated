@@ -168,6 +168,7 @@ export default class AsyncImageAnimated extends Component<Props, State> {
       Animated.timing(this.state.placeholderColorAnimated, {
         duration: 200,
         toValue: 0.0,
+        useNativeDriver: false,
       }).start()
     })
   }
@@ -190,11 +191,13 @@ export default class AsyncImageAnimated extends Component<Props, State> {
             delay,
             duration: 200,
             toValue: 0,
+            useNativeDriver: false,
           }),
           Animated.timing(imageOpacity, {
             delay,
             duration: 300,
             toValue: 1,
+            useNativeDriver: true,
           }),
         ]).start(callback)
 
@@ -205,17 +208,20 @@ export default class AsyncImageAnimated extends Component<Props, State> {
               delay,
               duration: 200,
               toValue: 0,
+              useNativeDriver: false,
             }),
             Animated.timing(placeholderScale, {
               delay,
               duration: 200,
               toValue: 0,
+              useNativeDriver: false,
             }),
           ]),
           Animated.timing(imageOpacity, {
             delay,
             duration: 300,
             toValue: 1,
+            useNativeDriver: true,
           }),
         ]).start(callback)
 
@@ -226,10 +232,12 @@ export default class AsyncImageAnimated extends Component<Props, State> {
               delay,
               duration: 100,
               toValue: 0.7,
+              useNativeDriver: false,
             }),
             Animated.timing(placeholderOpacity, {
               duration: 100,
               toValue: 0.66,
+              useNativeDriver: false,
             }),
           ]),
           Animated.parallel([
@@ -237,16 +245,19 @@ export default class AsyncImageAnimated extends Component<Props, State> {
               Animated.timing(placeholderOpacity, {
                 duration: 200,
                 toValue: 0,
+                useNativeDriver: false,
               }),
               Animated.timing(placeholderScale, {
                 duration: 200,
                 toValue: 1.2,
+                useNativeDriver: false,
               }),
             ]),
             Animated.timing(imageOpacity, {
               delay: 200,
               duration: 300,
               toValue: 1,
+              useNativeDriver: true,
             }),
           ]),
         ]).start(callback)
@@ -266,10 +277,12 @@ export default class AsyncImageAnimated extends Component<Props, State> {
       Animated.timing(placeholderColorAnimated, {
         duration: 500,
         toValue: 1.0,
+        useNativeDriver: false,
       }),
       Animated.timing(placeholderColorAnimated, {
         duration: 400,
         toValue: 0.0,
+        useNativeDriver: false,
       }),
     ]).start(this.animatePlaceholderColor)
   }
